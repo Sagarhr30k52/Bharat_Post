@@ -10,118 +10,151 @@
     <!-- Custom CSS -->
     <style>
         /* Custom Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
         }
 
-        /* Navbar Styles */
-        .navbar {
-            background-color: #ffffff;
-            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.075);
-        }
-
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar-brand svg {
-            margin-right: 0.5rem;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .navbar-brand:hover svg {
-            transform: rotate(15deg);
+        .custom-navbar {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 0.5rem 1rem;
         }
 
         .nav-link {
-            color: #495057;
-            transition: color 0.3s ease-in-out;
+            font-weight: 500;
+            color: var(--primary-color) !important;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
         }
 
         .nav-link:hover {
-            color: #0d6efd;
+            color: var(--secondary-color) !important;
+            transform: translateY(-2px);
         }
 
-        .nav-pills .nav-link.active {
-            background-color: #0d6efd;
-            color: #ffffff;
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+            position: relative;
         }
 
-        /* Hero Section Styles */
-        .hero {
-            background-color: #e9ecef;
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-radius: 1rem;
-            padding: 3rem 1.5rem;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(52,152,219,0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
 
-        .hero svg {
-            color: var(--bs-indigo);
-            transition: transform 0.5s ease-in-out;
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
         }
 
-        .hero:hover svg {
-            transform: scale(1.1);
-        }
-
-        .btn-primary {
-            background-color: #0d6efd;
-            border-color: #0d6efd;
-            transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        .btn-primary:hover {
-            background-color: #0a58ca;
-            border-color: #0a58ca;
-            transform: scale(1.05);
-        }
-
-        .btn-outline-secondary {
-            color: #6c757d;
-            border-color: #6c757d;
-            transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        .btn-outline-secondary:hover {
-            color: #ffffff;
-            background-color: #6c757d;
-            border-color: #6c757d;
-            transform: scale(1.05);
-        }
-
-        /* Chat Button Styles */
-        .chat-button {
-            background-color: green;
+        .cta-button {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
             border-radius: 50px;
-            padding: 10px 20px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary.cta-button {
+            background: var(--secondary-color);
             border: none;
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            box-shadow: 0 4px 15px rgba(52,152,219,0.3);
+        }
+
+        .btn-primary.cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52,152,219,0.4);
+        }
+
+        .btn-outline-secondary.cta-button {
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-outline-secondary.cta-button:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .chat-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 1.2rem;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(46,204,113,0.3);
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
         }
 
         .chat-button:hover {
-            background-color: darkgreen;
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(10deg);
+            animation: none;
         }
 
-        .chat-button svg {
-            fill: white;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+            
+            .cta-button {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
         }
     </style>
+    <title>Buy/Sell</title>
 </head>
 <body>
 
 <!-- Navbar -->
 <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom navbar">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom custom-navbar">
         <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none navbar-brand">
             <svg width="25" height="25" fill="currentColor" class="bi bi-postage-heart-fill" viewBox="0 0 16 16">
                 <path d="M4.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zM8 11C2.175 7.236 6.336 4.31 8 5.982 9.664 4.309 13.825 7.236 8 11"></path>
@@ -141,8 +174,8 @@
 </div>
 
 <!-- Hero Section -->
-<div class="container my-5">
-    <div class="p-5 text-center bg-body-tertiary rounded-3 hero">
+ <div class="container my-5">
+        <div class="hero-section">
         <svg width="100" height="100" class="bi mt-4 mb-3" style="color: var(--bs-indigo);" fill="currentColor"
              viewBox="0 0 16 16">
             <path d="M4.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zM8 11C2.175 7.236 6.336 4.31 8 5.982 9.664 4.309 13.825 7.236 8 11"></path>
@@ -175,9 +208,9 @@
 </div>
 
 <!-- Chat with us -->
-<div style="position: fixed; bottom: 20px; right: 20px; text-align: right;">
+<div style="position: fixed; bottom: 20px; right: 20px;">
     <a href="https://cdn.botpress.cloud/webchat/v2/shareable.html?botId=fff4e05a-1a7e-4d12-89e9-744602fc68f5">
-        <button class="btn btn-primary chat-button" type="button">
+        <button class="btn btn-primary chat-button" type="button"  class="chat-button btn btn-success">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                  class="bi bi-chat-heart" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
