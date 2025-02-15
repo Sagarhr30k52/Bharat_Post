@@ -67,14 +67,15 @@
       padding: 4rem 2rem;
       margin: 2rem 0;
       box-shadow: var(--shadow);
-      flex: 1;
+      width: 100%;
+      max-width: 800px;
     }
 
     .hero-title {
       font-size: 3rem;
       font-weight: 700;
       color: var(--primary-color);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .hero-subtitle {
@@ -210,14 +211,12 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <main class="container col-xl-10 col-xxl-8 px-4 py-5 hero-section">
-    <div class="row align-items-center g-lg-5 py-5">
-      <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="hero-title">Welcome Back to Bharat Post!</h1>
-        <p class="hero-subtitle">Sign in to continue your philatelic journey with us.</p>
-      </div>
-      <div class="col-md-10 mx-auto col-lg-5">
+  <!-- Hero Section (Centered Sign-In Container) -->
+  <main class="container d-flex flex-column align-items-center justify-content-center py-5" style="flex: 1;">
+    <div class="hero-section text-center">
+      <h1 class="hero-title">Welcome Back to Bharat Post!</h1>
+      <p class="hero-subtitle">Sign in to continue your philatelic journey with us.</p>
+      <div class="mx-auto" style="max-width: 400px;">
         <form class="login-form" action="../buy-sell-page/buySellMain.html" method="get" novalidate>
           <div class="form-floating mb-3">
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required />
