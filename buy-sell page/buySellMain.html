@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bharat Post</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Custom Styles */
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
             --accent-color: #e74c3c;
+            --background-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
+        body {
+            background: var(--background-gradient);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Navbar Styling */
         .custom-navbar {
-            background: linear-gradient(145deg, #ffffff, #f8f9fa);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            background: white;
+            box-shadow: var(--shadow);
             padding: 0.5rem 1rem;
         }
 
@@ -50,6 +54,7 @@
             border-radius: 2px;
         }
 
+        /* Hero Section Styling */
         .hero-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-radius: 1rem;
@@ -66,7 +71,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(52,152,219,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -75,6 +80,12 @@
             font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 2rem;
         }
 
         .cta-button {
@@ -88,12 +99,12 @@
         .btn-primary.cta-button {
             background: var(--secondary-color);
             border: none;
-            box-shadow: 0 4px 15px rgba(52,152,219,0.3);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
         }
 
         .btn-primary.cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(52,152,219,0.4);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
         }
 
         .btn-outline-secondary.cta-button {
@@ -106,20 +117,24 @@
             color: white;
         }
 
+        /* Chat Button Styling */
         .chat-button {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            padding: 1.2rem;
+            background: var(--accent-color);
+            border: none;
             border-radius: 50%;
             width: 60px;
             height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 25px rgba(46,204,113,0.3);
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.3);
             animation: pulse 2s infinite;
             transition: all 0.3s ease;
+            z-index: 1000;
+            cursor: pointer;
         }
 
         .chat-button:hover {
@@ -128,105 +143,89 @@
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
             }
-            
+
             .hero-section {
                 padding: 2rem 1rem;
             }
-            
+
             .cta-button {
                 width: 100%;
                 margin-bottom: 1rem;
+            }
+
+            .chat-button {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
             }
         }
     </style>
     <title>Buy/Sell</title>
 </head>
+
 <body>
 
-<!-- Navbar -->
-<div class="container">
-      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom custom-navbar">
-        <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none navbar-brand">
-            <svg width="25" height="25" fill="currentColor" class="bi bi-postage-heart-fill" viewBox="0 0 16 16">
-                <path d="M4.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zM8 11C2.175 7.236 6.336 4.31 8 5.982 9.664 4.309 13.825 7.236 8 11"></path>
-                <path d="M4.5 0a1 1 0 0 1-2 0H1v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 1 1 0 2v1a1 1 0 1 1 0 2v1h1.5a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0H15v-1a1 1 0 1 1 0-2v-1a1 1 0 1 1 0-2V9a1 1 0 1 1 0-2V6a1 1 0 1 1 0-2V3a1 1 0 1 1 0-2V0h-1.5a1 1 0 1 1-2 0h-1a1 1 0 1 1-2 0h-1a1 1 0 0 1-2 0zM4 14a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1z"></path>
-            </svg>
-            <span class="fs-4">Bharat Post</span>
-        </a>
+    <!-- Navbar -->
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom custom-navbar">
+            <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none navbar-brand">
+                <svg width="25" height="25" fill="currentColor" class="bi bi-postage-heart-fill" viewBox="0 0 16 16">
+                    <path d="M4.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zM8 11C2.175 7.236 6.336 4.31 8 5.982 9.664 4.309 13.825 7.236 8 11"></path>
+                    <path d="M4.5 0a1 1 0 0 1-2 0H1v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 1 1 0 2v1a1 1 0 1 1 0 2v1h1.5a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0H15v-1a1 1 0 1 1 0-2v-1a1 1 0 1 1 0-2V9a1 1 0 1 1 0-2V6a1 1 0 1 1 0-2V3a1 1 0 1 1 0-2V0h-1.5a1 1 0 1 1-2 0h-1a1 1 0 1 1-2 0h-1a1 1 0 0 1-2 0zM4 14a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1z"></path>
+                </svg>
+                <span class="fs-4">Bharat Post</span>
+            </a>
 
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        </ul>
-    </header>
-</div>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            </ul>
+        </header>
+    </div>
 
-<!-- Hero Section -->
- <div class="container my-5">
+    <!-- Hero Section -->
+    <div class="container my-5">
         <div class="hero-section">
-        <svg width="100" height="100" class="bi mt-4 mb-3" style="color: var(--bs-indigo);" fill="currentColor"
-             viewBox="0 0 16 16">
-            <path d="M4.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zM8 11C2.175 7.236 6.336 4.31 8 5.982 9.664 4.309 13.825 7.236 8 11"></path>
-            <path d="M4.5 0a1 1 0 0 1-2 0H1v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 1 1 0 2v1a1 1 0 1 1 0 2v1h1.5a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0H15v-1a1 1 0 1 1 0-2v-1a1 1 0 1 1 0-2V9a1 1 0 1 1 0-2V6a1 1 0 1 1 0-2V3a1 1 0 1 1 0-2V0h-1.5a1 1 0 1 1-2 0h-1a1 1 0 1 1-2 0h-1a1 1 0 0 1-2 0zM4 14a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1z"></path>
-        </svg>
-        <h1 class="text-body-emphasis">Bharat Post</h1>
-        <p class="col-lg-8 mx-auto fs-5 text-muted">
-            Welcome to the ultimate marketplace for postal treasures! Whether you're looking to buy rare stamps or sell
-            your prized collection, our platform makes it easy and secure.
-        </p>
-        <div class="d-inline-flex gap-2 mb-5">
-            <a href="../buy sell seprate pages/buypage.html">
-                <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill"
-                        type="button">
-                    Buy Now
-                    <svg xmlns="http://www.w3.org/2000/svg" class="bi ms-2" width="24" height="24" fill="currentColor"
-                         viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                              d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
-                    </svg>
-                </button>
-            </a>
-            <a href="../buy sell seprate pages/sellpage.html">
-                <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
-                    Sell
-                </button>
-            </a>
+            <h1 class="hero-title">Welcome to Bharat Post</h1>
+            <p class="hero-subtitle">Explore a world of stamps and postal treasures. Buy, sell, and connect with fellow enthusiasts!</p>
+            <div class="d-flex flex-wrap justify-content-center">
+                <a href="../buy sell seprate pages/buypage.html" class="btn btn-primary cta-button">Buy Now</a>
+                <a href="../buy sell seprate pages/sellpage.html" class="btn btn-outline-secondary cta-button">Sell</a>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Chat with us -->
-<div style="position: fixed; bottom: 20px; right: 20px;">
-    <a href="https://cdn.botpress.cloud/webchat/v2/shareable.html?botId=fff4e05a-1a7e-4d12-89e9-744602fc68f5">
-        <button class="btn btn-primary chat-button" type="button"  class="chat-button btn btn-success">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                 class="bi bi-chat-heart" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                      d="M2.965 12.695a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2m-.8 3.108.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125M8 5.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+    <!-- Chat with us -->
+    <div>
+        <a href="https://cdn.botpress.cloud/webchat/v2/shareable.html?botId=fff4e05a-1a7e-4d12-89e9-744602fc68f5" class="chat-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chat-heart" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.965 12.695a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2m-.8 3.108.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125M8 5.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
             </svg>
-            Chat With Us
-        </button>
-    </a>
-</div>
+        </a>
+    </div>
 
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-
-<!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
