@@ -2,244 +2,250 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --background-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to Bharat Post and continue your philatelic journey with us." />
+  <meta name="author" content="Bharat Post Team" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <title>Sign In to Bharat Post</title>
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --background-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
 
-        body {
-            background: var(--background-gradient);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    body {
+      background: var(--background-gradient);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        /* Navbar Styling */
-        .custom-navbar {
-            background: white;
-            box-shadow: var(--shadow);
-            padding: 0.5rem 1rem;
-        }
+    /* Navbar Styling */
+    .custom-navbar {
+      background: white;
+      box-shadow: var(--shadow);
+      padding: 0.5rem 1rem;
+    }
 
-        .nav-link {
-            font-weight: 500;
-            color: var(--primary-color) !important;
-            transition: all 0.3s ease;
-            margin: 0 0.5rem;
-        }
+    .nav-link {
+      font-weight: 500;
+      color: var(--primary-color) !important;
+      transition: all 0.3s ease;
+      margin: 0 0.5rem;
+    }
 
-        .nav-link:hover {
-            color: var(--secondary-color) !important;
-            transform: translateY(-2px);
-        }
+    .nav-link:hover {
+      color: var(--secondary-color) !important;
+      transform: translateY(-2px);
+    }
 
-        .nav-link.active {
-            color: var(--secondary-color) !important;
-            position: relative;
-        }
+    .nav-link.active {
+      color: var(--secondary-color) !important;
+      position: relative;
+    }
 
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--secondary-color);
-            border-radius: 2px;
-        }
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--secondary-color);
+      border-radius: 2px;
+    }
 
-        /* Hero Section Styling */
-        .hero-section {
-            background: white;
-            border-radius: 1rem;
-            padding: 4rem 2rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow);
-            flex: 1;
-        }
+    /* Hero Section Styling */
+    .hero-section {
+      background: white;
+      border-radius: 1rem;
+      padding: 4rem 2rem;
+      margin: 2rem 0;
+      box-shadow: var(--shadow);
+      flex: 1;
+    }
 
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
 
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
 
-        /* Login Form Styling */
-        .login-form {
-            background: white;
-            border-radius: 1rem;
-            padding: 2.5rem;
-            box-shadow: var(--shadow);
-        }
+    /* Login Form Styling */
+    .login-form {
+      background: white;
+      border-radius: 1rem;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+    }
 
-        .form-floating input {
-            border-radius: 0.5rem;
-            border: 1px solid #ddd;
-            padding: 1rem;
-            transition: all 0.3s ease;
-        }
+    .form-floating input {
+      border-radius: 0.5rem;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      transition: all 0.3s ease;
+    }
 
-        .form-floating input:focus {
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-        }
+    .form-floating input:focus {
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    }
 
-        .btn-primary {
-            background: var(--secondary-color);
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1.1rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-        }
+    .btn-primary {
+      background: var(--secondary-color);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
 
-        .btn-primary:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-        }
+    .btn-primary:hover {
+      background: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
 
-        /* Sign-in Link Styling */
-        .sign-in-link {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
+    /* Sign-up Link Styling */
+    .sign-in-link {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
 
-        .sign-in-link:hover {
-            text-decoration: underline;
-            color: #2980b9;
-        }
+    .sign-in-link:hover {
+      text-decoration: underline;
+      color: #2980b9;
+    }
 
-        /* Chat Button Styling */
-        .chat-button {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--accent-color);
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-            z-index: 1000;
-        }
+    /* Chat Button Styling */
+    .chat-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent-color);
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+      z-index: 1000;
+    }
 
-        .chat-button:hover {
-            transform: scale(1.1) rotate(10deg);
-            animation: none;
-        }
+    .chat-button:hover {
+      transform: scale(1.1) rotate(10deg);
+      animation: none;
+    }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
 
-            50% {
-                transform: scale(1.05);
-            }
+      50% {
+        transform: scale(1.05);
+      }
 
-            100% {
-                transform: scale(1);
-            }
-        }
+      100% {
+        transform: scale(1);
+      }
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2rem;
-            }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2rem;
+      }
 
-            .hero-subtitle {
-                font-size: 1rem;
-            }
+      .hero-subtitle {
+        font-size: 1rem;
+      }
 
-            .login-form {
-                padding: 1.5rem;
-            }
-        }
-    </style>
-    <title>Sign In to Bharat Post</title>
+      .login-form {
+        padding: 1.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Navbar -->
+  <!-- Navbar -->
+  <header class="custom-navbar">
     <div class="container">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom custom-navbar">
-            <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <svg width="25" height="25" fill="currentColor" class="bi bi-postage-heart-fill" viewBox="0 0 16 16">
-                    <path d="M4.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zM8 11C2.175 7.236 6.336 4.31 8 5.982 9.664 4.309 13.825 7.236 8 11"></path>
-                    <path d="M4.5 0a1 1 0 0 1-2 0H1v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 1 1 0 2v1a1 1 0 1 1 0 2v1h1.5a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0H15v-1a1 1 0 1 1 0-2v-1a1 1 0 1 1 0-2V9a1 1 0 1 1 0-2V6a1 1 0 1 1 0-2V3a1 1 0 1 1 0-2V0h-1.5a1 1 0 1 1-2 0h-1a1 1 0 1 1-2 0h-1a1 1 0 0 1-2 0zM4 14a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1z"></path>
-                </svg>
-                <span class="fs-4">Bharat Post</span>
-            </a>
-            <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-            </ul>
-        </header>
-    </div>
-
-    <!-- Hero Section -->
-    <div class="container col-xl-10 col-xxl-8 px-4 py-5 hero-section">
-        <div class="row align-items-center g-lg-5 py-5">
-            <div class="col-lg-7 text-center text-lg-start">
-                <h1 class="hero-title">Welcome Back to Bharat Post!</h1>
-                <p class="hero-subtitle">Sign in to continue your philatelic journey with us.</p>
-            </div>
-            <div class="col-md-10 mx-auto col-lg-5">
-                <form class="login-form" action="../buy-sell page/buySellMain.html" method="get">
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-                        <label for="floatingInput">Email address</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-                        <label for="floatingPassword">Password</label>
-                    </div>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
-                    <hr class="my-4">
-                    <small class="text-body-secondary">Don't have an account? <a href="#" class="sign-in-link">Sign Up</a></small>
-                    <small class="text-body-secondary">By clicking Sign In, you agree to the terms of use.</small>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Chat Button -->
-    <div>
-        <a href="https://cdn.botpress.cloud/webchat/v2/shareable.html?botId=fff4e05a-1a7e-4d12-89e9-744602fc68f5" class="chat-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-chat-heart" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.965 12.695a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2m-.8 3.108.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125M8 5.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
-            </svg>
+      <div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+          <svg width="25" height="25" fill="currentColor" class="bi bi-postage-heart-fill" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M4.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zM8 11C2.175 7.236 6.336 4.31 8 5.982 9.664 4.309 13.825 7.236 8 11"></path>
+            <path d="M4.5 0a1 1 0 0 1-2 0H1v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 1 1 0 2v1a1 1 0 1 1 0 2v1h1.5a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0H15v-1a1 1 0 1 1 0-2v-1a1 1 0 1 1 0-2V9a1 1 0 1 1 0-2V6a1 1 0 1 1 0-2V3a1 1 0 1 1 0-2V0h-1.5a1 1 0 1 1-2 0h-1a1 1 0 1 1-2 0h-1a1 1 0 0 1-2 0zM4 14a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1z"></path>
+          </svg>
+          <span class="fs-4 ms-2">Bharat Post</span>
         </a>
+        <nav aria-label="Main navigation">
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
+  </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Hero Section -->
+  <main class="container col-xl-10 col-xxl-8 px-4 py-5 hero-section">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="hero-title">Welcome Back to Bharat Post!</h1>
+        <p class="hero-subtitle">Sign in to continue your philatelic journey with us.</p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form class="login-form" action="../buy-sell-page/buySellMain.html" method="get" novalidate>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required />
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required />
+            <label for="floatingPassword">Password</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
+          <hr class="my-4" />
+          <div class="d-flex justify-content-between">
+            <small class="text-body-secondary">Don't have an account? <a href="#" class="sign-in-link">Sign Up</a></small>
+            <small class="text-body-secondary">By clicking Sign In, you agree to the terms of use.</small>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Chat Button -->
+  <a href="https://cdn.botpress.cloud/webchat/v2/shareable.html?botId=fff4e05a-1a7e-4d12-89e9-744602fc68f5" class="chat-button" aria-label="Chat with us">
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-chat-heart" viewBox="0 0 16 16" aria-hidden="true">
+      <path fill-rule="evenodd" d="M2.965 12.695a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2m-.8 3.108.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125M8 5.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
+    </svg>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
