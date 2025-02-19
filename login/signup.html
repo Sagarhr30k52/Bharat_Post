@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sign in to Bharat Post and continue your philatelic journey with us." />
+  <meta name="description" content="Sign up to Bharat Post and start your philatelic journey with us." />
   <meta name="author" content="Bharat Post Team" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <title>Sign In to Bharat Post</title>
+  <title>Sign Up to Bharat Post</title>
   <style>
     :root {
       --primary-color: #2c3e50;
@@ -63,7 +63,7 @@
       max-width: 800px;
     }
     .hero-title {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: var(--primary-color);
       margin-bottom: 1rem;
@@ -73,8 +73,8 @@
       color: #666;
       margin-bottom: 2rem;
     }
-    /* Login Form Styling */
-    .login-form {
+    /* Signup Form Styling */
+    .signup-form {
       background: white;
       border-radius: 1rem;
       padding: 2.5rem;
@@ -103,13 +103,13 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
     }
-    /* Sign-up Link Styling */
-    .sign-in-link {
+    /* Link Styling */
+    .auth-link {
       color: var(--secondary-color);
       text-decoration: none;
       transition: all 0.3s ease;
     }
-    .sign-in-link:hover {
+    .auth-link:hover {
       text-decoration: underline;
       color: #2980b9;
     }
@@ -144,7 +144,7 @@
     @media (max-width: 768px) {
       .hero-title { font-size: 2rem; }
       .hero-subtitle { font-size: 1rem; }
-      .login-form { padding: 1.5rem; }
+      .signup-form { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -156,7 +156,7 @@
         <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
           <svg width="25" height="25" fill="currentColor" class="bi bi-postage-heart-fill" viewBox="0 0 16 16" aria-hidden="true">
             <path d="M4.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zM8 11C2.175 7.236 6.336 4.31 8 5.982 9.664 4.309 13.825 7.236 8 11"></path>
-            <path d="M4.5 0a1 1 0 0 1-2 0H1v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 1 1 0 2v1a1 1 0 1 1 0 2v1a1 1 0 1 1 0 2v1h1.5a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0H15v-1a1 1 0 1 1 0-2v-1a1 1 0 1 1 0-2V9a1 1 0 1 1 0-2V6a1 1 0 1 1 0-2V3a1 1 0 1 1 0-2V0h-1.5a1 1 0 1 1-2 0h-1a1 1 0 1 1-2 0h-1a1 1 0 0 1-2 0zM4 14a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1z"></path>
+            <path d="M4.5 0a1 1 0 0 1-2 0H1v1a1 1 0 0 1 0 2v1a1 1 0 0 1 0 2v1a1 1 0 1 1 0 2v1a1 1 0 1 1 0 2v1a1 1 0 1 1 0 2v1a1 1 0 1 1 0 2v1h1.5a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0h1a1 1 0 1 1 2 0H15v-1a1 1 0 1 1 0-2v-1a1 1 0 1 1 0-2V9a1 1 0 1 1 0-2V6a1 1 0 1 1 0-2V3a1 1 0 1 1 0-2V0h-1.5a1 1 0 1 1-2 0h-1a1 1 0 1 1-2 0h-1a1 1 0 0 1-2 0zM4 14a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1z"></path>
           </svg>
           <span class="fs-4 ms-2">Bharat Post</span>
         </a>
@@ -173,27 +173,36 @@
     </div>
   </header>
 
-  <!-- Hero Section (Centered Sign-In Container) -->
+  <!-- Hero Section (Centered Signup Container) -->
   <main class="container d-flex flex-column align-items-center justify-content-center py-5" style="flex: 1;">
     <div class="hero-section text-center">
-      <h1 class="hero-title">Welcome Back to Bharat Post!</h1>
-      <p class="hero-subtitle">Sign in to continue your philatelic journey with us.</p>
+      <h1 class="hero-title">Create Your Account</h1>
+      <p class="hero-subtitle">Sign up to start your philatelic journey with us.</p>
       <div class="mx-auto" style="max-width: 400px;">
-        <!-- Updated form action to reflect correct path -->
-        <form class="login-form" action="buySellMain.html" method="get" novalidate>
+        <!-- Signup Form -->
+        <form class="signup-form" action="buySellMain.html" method="get" novalidate>
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required />
-            <label for="floatingInput">Email address</label>
+            <input type="text" class="form-control" id="floatingName" placeholder="Your Name" required />
+            <label for="floatingName">Full Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required />
+            <label for="floatingEmail">Email address</label>
           </div>
           <div class="form-floating mb-3">
             <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required />
             <label for="floatingPassword">Password</label>
           </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
+          <div class="form-floating mb-4">
+            <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password" required />
+            <label for="floatingConfirmPassword">Confirm Password</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
           <hr class="my-4" />
-          <div class="d-flex justify-content-between">
-            <small class="text-body-secondary">Don't have an account? <a href="#" class="sign-in-link">Sign Up</a></small>
-            <small class="text-body-secondary">By clicking Sign In, you agree to the terms of use.</small>
+          <div class="d-flex justify-content-center">
+            <small class="text-body-secondary">
+              Already have an account? <a href="loginPage.html" class="auth-link">Sign In</a>
+            </small>
           </div>
         </form>
       </div>
